@@ -22,6 +22,7 @@ class SpotifyChart
     string = ""
     music_hash.each do |tracks, track_details| #'details' is going to be an array
       string = "#{track_details.first["track_name"]} by #{track_details.first["artist_name"]} from the album #{track_details.first["album_name"]}"
+      # does top one imply it is no. 1 in the chart?
     end
     string
     # or do music_hash.values or refer to tracks key directly -- but I suppose there could be more keys we are not seeing
@@ -47,7 +48,6 @@ example music_hash:
 
  given a hash, like the one above, this method should *return* a string like:
  <track name> by <artist name> from the <album name> => when get to the hash, use those as keys to return values
-  
 the track name, artist name, and album name should be the first track in the
  tracks array => call.first on the array that 1st returned
 =end
@@ -63,5 +63,5 @@ the track name, artist name, and album name should be the first track in the
     # finally, call on #get_first_track_info using the 
     # hash that #get_json returns <= nest those
   end
-
 end
+
